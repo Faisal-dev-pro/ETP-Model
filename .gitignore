@@ -7,3 +7,5 @@ slprj/
 *.asv
 *.m~
 .DS_Store
+.MATLABDriveTag
+*.slxc
