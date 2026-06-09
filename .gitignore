@@ -1,0 +1,9 @@
+data/TR_dataTable.mat
+data/gulsoy_parsed.mat
+results/
+slprj/
+*.slx.autosave
+*.slx.r20*
+*.asv
+*.m~
+.DS_Store
