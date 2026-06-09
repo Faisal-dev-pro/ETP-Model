@@ -27,7 +27,6 @@ function results = run_phase2_param_id(varargin)
     opts.maxFunEvals     = 500;
     opts.boundsMode      = 'tight';
     opts.fitAnE          = false;
-    opts.warmStart       = false;
     opts.verbose         = true;
     for k = 1:2:numel(varargin)
         opts.(varargin{k}) = varargin{k+1};
@@ -241,18 +240,6 @@ function [params_fit, rmse_train, info] = fit_cathode_kinetics(p, d, opts)
 
     lb = x0 .* lb_mul;
     ub = x0 .* ub_mul;
-
-    if opts.warmStart
-        x0_orig = x0;
-        x0(3) = sqrt(lb(3) * ub(3));
-        if opts.fitAnE
-            x0(4) = sqrt(lb(4) * ub(4));
-        end
-        fprintf('     WARM-START: dH_cat init %.2e -> %.2e\n', x0_orig(3), x0(3));
-        if opts.fitAnE
-            fprintf('     WARM-START: dH_AnE init %.2e -> %.2e\n', x0_orig(4), x0(4));
-        end
-    end
 
     fprintf('     A_cat:  [%.2e, %.2e],  init %.2e\n', lb(1), ub(1), x0(1));
     fprintf('     Ea_cat: [%.3e, %.3e],  init %.3e\n', lb(2), ub(2), x0(2));
