@@ -96,12 +96,12 @@ p.pressure.nu_O2  = 0.5;   % mol O2 per mol cathode active material delithiated
 
 % Initial moles available for gas-producing reactions
 % (derived from cell mass and chemistry; refine in Phase 3 with cell teardown data)
-% Crude estimates — electrolyte mass ~15% of cell, MW ~100 g/mol
-p.pressure.m_e0   = 0.15 * p.cell.m;   % kg liquid electrolyte initially
+% Cell autopsy values from Chen et al. (2025) Table 2, NCA 21700
+p.pressure.m_e0   = 4.815e-3;          % kg electrolyte (autopsy)
 p.pressure.MW_e   = 0.100;             % kg/mol average electrolyte MW
 p.pressure.n_e0   = p.pressure.m_e0 / p.pressure.MW_e;   % mol electrolyte
-% Cathode active material ~30% of cell mass, MW ~96 g/mol for NMC
-p.pressure.m_c0   = 0.30 * p.cell.m;
+% Cathode active material — NCA (LiNi0.80Co0.15Al0.05O2)
+p.pressure.m_c0   = 23.467e-3;        % kg cathode active mass (autopsy)
 p.pressure.MW_c   = 0.096;
 p.pressure.n_c0   = p.pressure.m_c0 / p.pressure.MW_c;
 
