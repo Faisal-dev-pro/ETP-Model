@@ -110,6 +110,6 @@ p.pressure.n_c0   = p.pressure.m_c0 / p.pressure.MW_c;
 p.pressure.T_vap_on    = 353.15;  % K (80 degC) — vapourisation turn-on
 p.pressure.T_vap_off   = 473.15;  % K (200 degC) — liquid exhausted by here
 p.pressure.T_vap_scale = 20;      % K — scale of turn-on
-p.pressure.k_vap_pre   = 1e-3;    % 1/s — vapourisation rate pre-factor
+p.pressure.k_vap_pre   = 0;      % disabled: see Phase 3 notes    % 1/s — vapourisation rate pre-factor
 
 end
